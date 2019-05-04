@@ -1,0 +1,50 @@
+Here is the command to create a database:
+
+Basic Syntax: 
+CREATE DATABASE [IF NOT EXISTS] database_name;
+
+Other Optional commands include [CHARACTER SET charset_name] and [COLLATE collation_name]
+
+Example:
+$> CREATE DATABASE theaters;
+
+====================
+Some More Examples:
+====================
+$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.12 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database movies;
+Query OK, 1 row affected (0.23 sec)
+
+mysql> show create database movies;
++----------+-----------------------------------------------------------------------------------------------+
+| Database | Create Database                                                                               |
++----------+-----------------------------------------------------------------------------------------------+
+| movies   | CREATE DATABASE `movies` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ |
++----------+-----------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> use movies;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create database movies;
+ERROR 1007 (HY000): Can't create database 'movies'; database exists
+mysql> create database IF NOT EXISTS movies;
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql>
+
