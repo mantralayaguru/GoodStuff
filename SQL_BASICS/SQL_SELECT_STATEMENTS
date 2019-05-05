@@ -23,3 +23,15 @@ GROUP    BY clause groups a set of rows into groups and applies aggregate functi
 HAVING   clause filters group based on groups defined by GROUP BY clause.
 ORDER BY clause specifies a list of columns for sorting.
 LIMIT    constrains the number of returned rows.
+
+
+
+
+
+
+
+
+
+
+
+Source: http://www.mysqltutorial.org/mysql-select-statement-query-data.aspx
