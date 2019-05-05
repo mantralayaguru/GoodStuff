@@ -26,10 +26,49 @@ LIMIT    constrains the number of returned rows.
 
 
 
+===================== SELECT DISTINCT SYNTAX ==========================
+SELECT DISTINCT
+    columns
+FROM
+    table_name
+WHERE
+    where_conditions;
+
+Example:
+========
+To remove the duplicate last names, you add the DISTINCT clause to the SELECT statement as follows:
+
+SELECT DISTINCT
+    lastname
+FROM
+    employees
+ORDER BY lastname;
 
 
+You can use the DISTINCT clause with more than one column. In this case, MySQL uses the combination of values in 
+these columns to determine the uniqueness of the row in the result set.
+
+Example:
+========
+SELECT DISTINCT
+    state, city
+FROM
+    customers
+WHERE
+    state IS NOT NULL
+ORDER BY state , city;
 
 
+If you use the GROUP BY clause in the SELECT statement without using aggregate functions, the GROUP BY clause 
+behaves like the DISTINCT clause.
+
+The following statement uses the GROUP BY clause to select the unique states of customers from the customers table.
+
+SELECT                                                      SELECT DISTINCT
+    state                                                       state
+FROM                           This is Similar to:          FROM
+    customers                                                   customers;
+GROUP BY state;
 
 
 
