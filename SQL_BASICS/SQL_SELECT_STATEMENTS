@@ -71,6 +71,22 @@ FROM                           This is Similar to:          FROM
 GROUP BY state;
 
 
+Generally speaking, the DISTINCT clause is a special case of the GROUP BY clause. The difference between DISTINCT clause
+and GROUP BY clause is that the GROUP BY clause sorts the result set whereas the DISTINCT clause does not.
+
+If you add the ORDER BY clause to the statement that uses the  DISTINCT clause, the result set is sorted and it is the
+same as the one returned by the statement that uses GROUP BY clause.
+
+
+'''MySQL DISTINCT and aggregate functions:'''
+You can use the DISTINCT clause with an aggregate function e.g., SUM, AVG, and COUNT, to remove duplicate rows before the aggregate functions are applied to the result set.
+
+SELECT 
+    COUNT(DISTINCT state)
+FROM
+    customers
+WHERE
+    country = 'USA';
 
 
 Source: http://www.mysqltutorial.org/mysql-select-statement-query-data.aspx
